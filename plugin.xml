@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-audio-permissions-plugin" version="0.0.1">
+    <name>AudioPermissionsPlugin</name>
+
+    <description>A cordova plugin to ask for and check status of audio recording permissions.</description>
+    <license></license>
+
+    <keywords></keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/AudioPermissions.js" name="audioPermissions">
+        <clobbers target="window.plugins.audioPermissions" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AudioPermissions">
+                <param name="android-package" value="se.possan.cordova.AudioPermissions"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/AudioPermissions.java" target-dir="src/se/possan/cordova" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AudioPermissions">
+                <param name="ios-package" value="CDVAudioPermissions" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVAudioPermissions.h" />
+        <source-file src="src/ios/CDVAudioPermissions.m" />
+    </platform>
+</plugin>

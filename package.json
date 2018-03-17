@@ -1,0 +1,23 @@
+{
+    "name": "cordova-audio-permissions-plugin",
+    "version": "0.0.1",
+    "description": "A cordova plugin to ask for and check status of audio recording permissions",
+    "cordova": {
+      "id": "cordova-audio-permissions-plugin",
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "engines": {
+      "cordovaDependencies": {
+        "0.1.0": {
+          "cordova": ">=3.0.0"
+        },
+        "3.0.0": {
+          "cordova": ">100"
+        }
+      }
+    },
+    "author": "Per-Olov Jernberg <possan@possan.se>"
+  }
